@@ -4,7 +4,7 @@ pipeline {
         stage("compilar") {
             steps {
                 echo "compilar"
-                sh "dotnet build"
+                dotnetBuild sdk: 'net5'
             }
         }
     }
