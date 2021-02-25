@@ -15,5 +15,9 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'Compilar'
-- script: dotnet test 
-  displayName: 'Test'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    arguments: '--no-restore'
+  displayName: 'Tests'
